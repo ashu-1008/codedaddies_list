@@ -1,1 +1,1 @@
-this is a craiglist clone called.. codedaddies
+This is a Craiglist clone called.. Codedaddies List
