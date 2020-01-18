@@ -1,49 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 style="text-align: center">{{ search | title}}</h2>
-
-<div class="row">
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <a href="/"><img src="https://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development.jpg" ></a>
+    <h2 style="text-align: center">{{ search | title}}</h2>
+    <div class="row">
+    {% for post in final_postings %}
+        <div class="col s4">
+            <div class="card" style="height: 400px;overflow: hidden;" >
+                <div class="card-image" style="height: 200px;overflow: hidden" >
+                    <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
+                </div>
+                <div class="card-content">
+                    <p>{{ post.0 }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ post.1 }}">View listing: Price {{ post.2 }}</a>
+                </div>
             </div>
-        <div class="card-content">
-            <p>TEST</p>
         </div>
-        <div class="card-action">
-            <a href="/">View listing: Price Test Price</a>
-        </div>
+    {% endfor %}
     </div>
-    </div>
-
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <a href="/"><img src="https://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development.jpg" ></a>
-            </div>
-        <div class="card-content">
-            <p>TEST</p>
-        </div>
-        <div class="card-action">
-            <a href="/">View listing: Price Test Price</a>
-        </div>
-    </div>
-    </div>
-
-    <div class="col s4">
-    <div class="card">
-        <div class="card-image">
-            <a href="/"><img src="https://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development.jpg" ></a>
-        </div>
-        <div class="card-content">
-            <p>TEST</p>
-        </div>
-        <div class="card-action">
-            <a href="/">View listing: Price Test Price</a>
-        </div>
-    </div>
-    </div>
-</div>
 {% endblock content%}
